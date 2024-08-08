@@ -13,16 +13,18 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Copy index.html to gh-pages base dir
-        run: cp index.html /index.html  # Copy index.html to output directory
+      - name: Create Directory for GitHub Pages
+        run: mkdir -p gh-pages
 
-      - name: Copy problem mappings.js to gh-pages base dir
-        run: cp problem_mapping.js /problem_mapping.js
+      - name: Copy index.html to gh-pages directory
+        run: cp index.html gh-pages/index.html  # Copy index.html to gh-pages directory
 
+      - name: Copy problem_mapping.js to gh-pages directory
+        run: cp problem_mapping.js gh-pages/problem_mapping.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.TOKEN }}
-          publish_dir: ./  # Directory containing your compiled PDF
-          destination_dir: ./  # Directory where the site will be hosted
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: gh-pages  # Directory containing your HTML and JS files
+          destination_dir: ./  # Optional: specify if you want a different path in the gh-pages branch
