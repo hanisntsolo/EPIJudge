@@ -5,6 +5,7 @@ import java.math.BigInteger;
 import java.util.BitSet;
 
 public class Parity {
+  static int[] preComputedParity;
   // O(n) running time
 //  @EpiTest(testDataFile = "parity.tsv")
 //  public static short parity(long x) {
@@ -32,8 +33,29 @@ public class Parity {
 //    }
 //    return parity;
 //  }
-  // O(log n) Most optimized way of computing parity of 64 bit word.
+  private static void preComputeParity() {
+    preComputedParity = new int[65536];
+    for(int i = 0; i < 65536; i++) {
+      preComputedParity[i] = parityBitFiddlingOlogN(i);
+    }
+  }
+  static {
+    preComputeParity();
+  }
+  // With preComputedParity using a lookup table
   @EpiTest(testDataFile = "parity.tsv")
+  public static short parityWithPreComputedParity(long x) {
+
+    final int MASK_SIZE = 16;
+    final int BIT_MASK = 0xFFFF;
+    return (short)
+       (preComputedParity[(int) ((x >>> (3 * MASK_SIZE)) & BIT_MASK)] ^
+        preComputedParity[(int)((x >>> (2 * MASK_SIZE)) & BIT_MASK)] ^
+        preComputedParity[(int)((x >>> MASK_SIZE) & BIT_MASK)] ^
+        preComputedParity[(int)(x & BIT_MASK)]);
+  }
+  // O(log n) Most optimized way of computing parity of 64 bit word.
+//  @EpiTest(testDataFile = "parity.tsv")
   public static short parityBitFiddlingOlogN(long x) {
     x ^= x >> 32;
     x ^= x >> 16;
