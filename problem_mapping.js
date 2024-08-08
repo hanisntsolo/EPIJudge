@@ -62,7 +62,7 @@ problem_mapping = {
                 "total": 10000
             },
             "Java: ClosestIntSameWeight.java": {
-                "passed": 0,
+                "passed": 10000,
                 "total": 10000
             },
             "Python: closest_int_same_weight.py": {
@@ -76,7 +76,7 @@ problem_mapping = {
                 "total": 10006
             },
             "Java: PrimitiveMultiply.java": {
-                "passed": 0,
+                "passed": 10006,
                 "total": 10006
             },
             "Python: primitive_multiply.py": {
