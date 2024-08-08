@@ -16,10 +16,14 @@ jobs:
       - name: Create Directory for GitHub Pages
         run: |
           mkdir -p gh-pages/html  # Create the directory for the html folder
+          mkdir -p gh-pages/epi_judge_java/epi  # Create the directory for the html folder
           mkdir -p gh-pages  # Create the gh-pages directory
 
       - name: Copy html folder to gh-pages directory
         run: cp -r html/* gh-pages/html/  # Use -r flag to copy directories recursively
+
+      - name: Copy java source folder to gh-pages directory
+        run: cp -r epi_judge_java/* gh-pages/epi_judge_java/  # Use -r flag to copy directories recursively
 
       - name: Copy index.html to gh-pages directory
         run: cp index.html gh-pages/index.html  # Copy index.html to gh-pages directory
@@ -30,10 +34,13 @@ jobs:
       - name: Add CNAME file for Custom Domain
         run: echo "epi.hanisntsolo.com" > gh-pages/CNAME
 
-      - name: List Contents of gh-pages
+      - name: Install Tree Command
+        run: sudo apt-get install tree
+
+      - name: List Contents of gh-pages Directory
         run: |
           echo "Contents of gh-pages directory:"
-          ls -la gh-pages
+          tree gh-pages
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
