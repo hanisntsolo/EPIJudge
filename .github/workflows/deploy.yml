@@ -37,4 +37,4 @@ jobs:
         with:
           github_token: ${{ secrets.TOKEN }}
           publish_dir: gh-pages  # Directory containing your HTML and JS files
-          destination_dir: ./index.html  # Optional: specify if you want a different path in the gh-pages branch
+          destination_dir: ./  # Optional: specify if you want a different path in the gh-pages branch
