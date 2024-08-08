@@ -17,7 +17,7 @@ jobs:
         run: mkdir -p gh-pages
 
       - name: Copy html folder to gh-pages directory
-        run: cp html gh-pages/html # Copy css and js files to gh-pages
+        run: cp -r html/* gh-pages/html/ # Use -r flag to copy directories recursively
 
       - name: Copy index.html to gh-pages directory
         run: cp index.html gh-pages/index.html  # Copy index.html to gh-pages directory
@@ -25,10 +25,14 @@ jobs:
       - name: Copy problem_mapping.js to gh-pages directory
         run: cp problem_mapping.js gh-pages/problem_mapping.js
 
+      - name: List Contents of gh-pages
+        run: |
+          echo "Contents of gh-pages directory:"
+          ls -la gh-pages
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: gh-pages  # Directory containing your HTML and JS files
-          destination_dir: ./  # Optional: specify if you want a different path in the gh-pages branch
+          destination_dir: ./index.html  # Optional: specify if you want a different path in the gh-pages branch
