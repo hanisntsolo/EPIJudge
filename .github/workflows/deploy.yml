@@ -14,10 +14,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Create Directory for GitHub Pages
-        run: mkdir -p gh-pages
+        run: |
+          mkdir -p gh-pages/html  # Create the directory for the html folder
+          mkdir -p gh-pages  # Create the gh-pages directory
 
       - name: Copy html folder to gh-pages directory
-        run: cp -r html/* gh-pages/html/ # Use -r flag to copy directories recursively
+        run: cp -r html/* gh-pages/html/  # Use -r flag to copy directories recursively
 
       - name: Copy index.html to gh-pages directory
         run: cp index.html gh-pages/index.html  # Copy index.html to gh-pages directory
