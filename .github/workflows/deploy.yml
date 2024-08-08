@@ -14,15 +14,15 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Copy index.html to gh-pages base dir
-        run: cp index.html /index.html  # Copy index.html to output directory
+        run: cp index.html output/index.html  # Copy index.html to output directory
 
       - name: Copy problem mappings.js to gh-pages base dir
-        run: cp problem_mapping.js /problem_mapping.js
+        run: cp problem_mapping.js output/problem_mapping.js
 
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.TOKEN }}
-          publish_dir: ./index.html  # Change this to the actual directory where your built files are located
-
+          publish_dir: ./output  # Directory containing your compiled PDF
+          destination_dir: ./  # Directory where the site will be hosted
