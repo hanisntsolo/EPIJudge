@@ -90,7 +90,7 @@ problem_mapping = {
                 "total": 10000
             },
             "Java: PrimitiveDivide.java": {
-                "passed": 0,
+                "passed": 10000,
                 "total": 10000
             },
             "Python: primitive_divide.py": {
@@ -104,7 +104,7 @@ problem_mapping = {
                 "total": 10002
             },
             "Java: PowerXY.java": {
-                "passed": 0,
+                "passed": 10002,
                 "total": 10002
             },
             "Python: power_x_y.py": {
@@ -118,7 +118,7 @@ problem_mapping = {
                 "total": 19952
             },
             "Java: ReverseDigits.java": {
-                "passed": 0,
+                "passed": 19952,
                 "total": 19952
             },
             "Python: reverse_digits.py": {
@@ -132,7 +132,7 @@ problem_mapping = {
                 "total": 20000
             },
             "Java: IsNumberPalindromic.java": {
-                "passed": 0,
+                "passed": 20000,
                 "total": 20000
             },
             "Python: is_number_palindromic.py": {
@@ -146,7 +146,7 @@ problem_mapping = {
                 "total": 7
             },
             "Java: UniformRandomNumber.java": {
-                "passed": 0,
+                "passed": 7,
                 "total": 7
             },
             "Python: uniform_random_number.py": {
