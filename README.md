@@ -1,3 +1,5 @@
+
+[![Deploy to GitHub Pages](https://github.com/hanisntsolo/EPIJudge/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/hanisntsolo/EPIJudge/actions/workflows/deploy.yml) [![Run Java programs](https://github.com/hanisntsolo/EPIJudge/actions/workflows/test_java_make.yml/badge.svg?branch=master)](https://github.com/hanisntsolo/EPIJudge/actions/workflows/test_java_make.yml)
 # EPI Judge
 
 ## Beta 5
