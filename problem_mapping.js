@@ -160,7 +160,7 @@ problem_mapping = {
                 "total": 10000
             },
             "Java: RectangleIntersection.java": {
-                "passed": 0,
+                "passed": 10000,
                 "total": 10000
             },
             "Python: rectangle_intersection.py": {
@@ -176,7 +176,7 @@ problem_mapping = {
                 "total": 1001
             },
             "Java: EvenOddArray.java": {
-                "passed": 0,
+                "passed": 1001,
                 "total": 1001
             },
             "Python: even_odd_array.py": {
@@ -190,7 +190,7 @@ problem_mapping = {
                 "total": 204
             },
             "Java: DutchNationalFlag.java": {
-                "passed": 0,
+                "passed": 204,
                 "total": 204
             },
             "Python: dutch_national_flag.py": {
@@ -204,7 +204,7 @@ problem_mapping = {
                 "total": 505
             },
             "Java: IntAsArrayIncrement.java": {
-                "passed": 0,
+                "passed": 505,
                 "total": 505
             },
             "Python: int_as_array_increment.py": {
@@ -218,7 +218,7 @@ problem_mapping = {
                 "total": 1000
             },
             "Java: IntAsArrayMultiply.java": {
-                "passed": 0,
+                "passed": 1000,
                 "total": 1000
             },
             "Python: int_as_array_multiply.py": {
@@ -232,7 +232,7 @@ problem_mapping = {
                 "total": 2004
             },
             "Java: AdvanceByOffsets.java": {
-                "passed": 0,
+                "passed": 2004,
                 "total": 2004
             },
             "Python: advance_by_offsets.py": {
@@ -246,7 +246,7 @@ problem_mapping = {
                 "total": 2003
             },
             "Java: SortedArrayRemoveDups.java": {
-                "passed": 0,
+                "passed": 2003,
                 "total": 2003
             },
             "Python: sorted_array_remove_dups.py": {
