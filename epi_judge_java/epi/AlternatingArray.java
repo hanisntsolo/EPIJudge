@@ -6,11 +6,15 @@ import epi.test_framework.TestUtils;
 import epi.test_framework.TimedExecutor;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 public class AlternatingArray {
   public static void rearrange(List<Integer> A) {
-    // TODO - you fill in here.
-    return;
+    for(int i = 1; i < A.size(); i++) {
+      if((i & 1) == 0 && A.get(i - 1) < A.get(i) || (i & 1) == 1 && A.get(i - 1) > A.get(i)) {
+        Collections.swap(A, i - 1, i);
+      }
+    }
   }
   private static void checkOrder(List<Integer> A) throws TestFailure {
     for (int i = 0; i < A.size(); ++i) {
