@@ -260,7 +260,7 @@ problem_mapping = {
                 "total": 402
             },
             "Java: BuyAndSellStock.java": {
-                "passed": 0,
+                "passed": 402,
                 "total": 402
             },
             "Python: buy_and_sell_stock.py": {
@@ -274,7 +274,7 @@ problem_mapping = {
                 "total": 402
             },
             "Java: BuyAndSellStockTwice.java": {
-                "passed": 0,
+                "passed": 402,
                 "total": 402
             },
             "Python: buy_and_sell_stock_twice.py": {
@@ -288,7 +288,7 @@ problem_mapping = {
                 "total": 203
             },
             "Java: AlternatingArray.java": {
-                "passed": 0,
+                "passed": 203,
                 "total": 203
             },
             "Python: alternating_array.py": {
@@ -302,7 +302,7 @@ problem_mapping = {
                 "total": 24
             },
             "Java: PrimeSieve.java": {
-                "passed": 0,
+                "passed": 24,
                 "total": 24
             },
             "Python: prime_sieve.py": {
@@ -316,7 +316,7 @@ problem_mapping = {
                 "total": 101
             },
             "Java: ApplyPermutation.java": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             },
             "Python: apply_permutation.py": {
