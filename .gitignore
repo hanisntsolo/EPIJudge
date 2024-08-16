@@ -1,4 +1,4 @@
-# JetBrains IDEs (CLion, IntelliJ, and PyCharm)
+\# JetBrains IDEs (CLion, IntelliJ, and PyCharm)
 .idea
 
 # CLIion CMake builds
@@ -27,3 +27,5 @@ epi_judge_java/java_build/
 
 # OS X specific files
 .DS_Store
+EPIJudge.iml
+out

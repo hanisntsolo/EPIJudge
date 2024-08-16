@@ -6,16 +6,27 @@ import epi.test_framework.TestFailure;
 import epi.test_framework.TimedExecutor;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+
 public class NonuniformRandomNumber {
 
   public static int
   nonuniformRandomNumberGeneration(List<Integer> values,
                                    List<Double> probabilities) {
-    // TODO - you fill in here.
-    return 0;
+    List<Double> prefixSumOfProbabilities = new ArrayList<>();
+    probabilities.stream().reduce(0.0D, (left, right) -> { prefixSumOfProbabilities.add(left + right); return left + right; }); // Very clean way of generating the partition/interval.
+    final double uniform01 = new Random().nextDouble();
+    int it = Collections.binarySearch(prefixSumOfProbabilities, uniform01);
+    if(it < 0) {
+       final int intervalIndex = Math.abs(it) - 1;
+       return values.get(intervalIndex);
+    } else {
+      return values.get(it);
+    }
   }
   private static boolean nonuniformRandomNumberGenerationRunner(
       TimedExecutor executor, List<Integer> values, List<Double> probabilities)
