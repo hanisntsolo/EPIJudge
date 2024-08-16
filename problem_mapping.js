@@ -330,7 +330,7 @@ problem_mapping = {
                 "total": 2001
             },
             "Java: NextPermutation.java": {
-                "passed": 0,
+                "passed": 2001,
                 "total": 2001
             },
             "Python: next_permutation.py": {
@@ -344,7 +344,7 @@ problem_mapping = {
                 "total": 8
             },
             "Java: OfflineSampling.java": {
-                "passed": 0,
+                "passed": 8,
                 "total": 8
             },
             "Python: offline_sampling.py": {
@@ -372,7 +372,7 @@ problem_mapping = {
                 "total": 6
             },
             "Java: RandomPermutation.java": {
-                "passed": 0,
+                "passed": 6,
                 "total": 6
             },
             "Python: random_permutation.py": {
@@ -386,7 +386,7 @@ problem_mapping = {
                 "total": 9
             },
             "Java: RandomSubset.java": {
-                "passed": 0,
+                "passed": 9,
                 "total": 9
             },
             "Python: random_subset.py": {
@@ -400,7 +400,7 @@ problem_mapping = {
                 "total": 10
             },
             "Java: NonuniformRandomNumber.java": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             },
             "Python: nonuniform_random_number.py": {
@@ -414,7 +414,7 @@ problem_mapping = {
                 "total": 745
             },
             "Java: IsValidSudoku.java": {
-                "passed": 0,
+                "passed": 745,
                 "total": 745
             },
             "Python: is_valid_sudoku.py": {
@@ -428,7 +428,7 @@ problem_mapping = {
                 "total": 51
             },
             "Java: SpiralOrdering.java": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             },
             "Python: spiral_ordering.py": {
@@ -442,7 +442,7 @@ problem_mapping = {
                 "total": 51
             },
             "Java: MatrixRotation.java": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             },
             "Python: matrix_rotation.py": {
@@ -456,7 +456,7 @@ problem_mapping = {
                 "total": 35
             },
             "Java: PascalTriangle.java": {
-                "passed": 0,
+                "passed": 35,
                 "total": 35
             },
             "Python: pascal_triangle.py": {

@@ -1,4 +1,5 @@
 package epi;
+
 import epi.test_framework.EpiTest;
 import epi.test_framework.GenericTest;
 import epi.test_framework.RandomSequenceChecker;
@@ -8,11 +9,18 @@ import epi.test_framework.TimedExecutor;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import static epi.OfflineSampling.randomSampling;
+
 public class RandomPermutation {
 
   public static List<Integer> computeRandomPermutation(int n) {
-    // TODO - you fill in here.
-    return Collections.emptyList();
+    List<Integer> permutation = IntStream.range(0, n).boxed().collect(Collectors.toList()); // collect(Collectors.toList()) is necessary for us to be able to modify the list.
+    randomSampling(permutation.size(), permutation);
+    return permutation;
   }
   private static int factorial(int n) {
     return n <= 1 ? 1 : n * factorial(n - 1);
