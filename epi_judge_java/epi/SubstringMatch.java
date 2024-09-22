@@ -6,32 +6,27 @@ public class SubstringMatch {
 
   // Returns the index of the first character of the substring if found, -1
   // otherwise.
+  // DATE : 22-Sep-2024
   public static int rabinKarp(String t, String s) {
-    if(s.length() > t.length()) {
-      return -1; // s is not a substring of t
-    }
+    if(s.length() > t.length()) return -1; // Search string is greater than reference string.
+    int tHash = 0, sHash = 0, powerS = 1;
     final int BASE = 26;
-    int tHash = 0, sHash = 0; // hash codes for the substring of t and s.
-    int powerS = 1;           // BASE ^ |n - 1|
-    for(int i = 0 ; i < s.length(); i++) {
+    for(int i = 0; i < s.length(); i++) {
       powerS = i > 0 ? powerS * BASE : 1;
       tHash = tHash * BASE + t.charAt(i);
       sHash = sHash * BASE + s.charAt(i);
     }
-    for(int i = s.length() ; i < t.length(); i++) {
-      // Check two strings are equal or not to protect against hash Collisions
-      if(tHash == sHash && t.substring(i -s.length(), i).equals(s)) {
+    for(int i = s.length(); i < t.length(); i++) {
+      if(tHash == sHash && t.substring(i - s.length(), i).equals(s))
         return i - s.length(); // Found a match
-      }
-      // Use rolling hash to compute the new hashCodes.
-      tHash -= t.charAt(i - s.length()) * powerS;
-      tHash = tHash * BASE + t.charAt(i);
+      tHash -= t.charAt(i - s.length()) * powerS; // Subtract the first occurrence
+      tHash = tHash * BASE + t.charAt(i); // Add the new occurrence
     }
-    // Tries to match s and t.substring(t.length() - s.length()).
+    // Edge case : //To match last s.length() characters to check for a possible match.
     if(tHash == sHash && t.substring(t.length() - s.length()).equals(s)) {
-      return t.length() - s.length();
+      return t.length() - s.length(); // Found a match // Edge case
     }
-    return -1; // s is not a substring of t.
+    return -1;//No match found
   }
 
   public static void main(String[] args) {
