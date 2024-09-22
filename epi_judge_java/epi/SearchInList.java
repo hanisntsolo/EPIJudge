@@ -4,8 +4,10 @@ import epi.test_framework.GenericTest;
 public class SearchInList {
 
   public static ListNode<Integer> searchList(ListNode<Integer> L, int key) {
-    // TODO - you fill in here.
-    return null;
+    while (L != null && L.data != key) {
+      L = L.next;
+    }
+    return L; // if key is not found then the ListNode<Integer> will become null.
   }
   @EpiTest(testDataFile = "search_in_list.tsv")
   public static int searchListWrapper(ListNode<Integer> L, int key) {
