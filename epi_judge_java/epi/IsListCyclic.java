@@ -5,8 +5,48 @@ import epi.test_framework.TestFailure;
 import epi.test_framework.TimedExecutor;
 public class IsListCyclic {
 
+  // Another approach which first goes on finding a cycle and then calculates the head of the cycle.
+//  public static ListNode<Integer> hasCycle(ListNode<Integer> head) {
+//    ListNode<Integer> slow = head, fast = head;
+//    while(fast != null && fast.next != null) {
+//      slow = slow.next;
+//      fast = fast.next.next;
+//      if(slow == fast) { // if the nodes overlap compute cycle length
+//        int cycleLen = 0;
+//        do {
+//          cycleLen++;
+//          fast = fast.next;
+//        } while (fast != slow);
+//        ListNode<Integer> cycleAdvanceIter = head;
+//        while(cycleLen-- > 0) {
+//          cycleAdvanceIter = cycleAdvanceIter.next;
+//        }
+//        ListNode<Integer> iter = head;
+//        while(iter != cycleAdvanceIter) {
+//          iter = iter.next;
+//          cycleAdvanceIter = cycleAdvanceIter.next;
+//        }
+//        return iter;
+//      }
+//    }
+//    return null;
+//  }
+//    Intuitive approach for finding a cycle in the LinkedList, which should be ideally followed.
   public static ListNode<Integer> hasCycle(ListNode<Integer> head) {
-    // TODO - you fill in here.
+    ListNode<Integer> slow = head, fast = head;
+    while(fast != null && fast.next != null && fast.next.next != null) { // Wanna make sure not going out of bounds while doing this.
+      slow = slow.next;
+      fast = fast.next.next;
+      if(slow == fast) {
+        //that means there exist a cycle
+        slow = head;
+        while(slow != fast) {
+          slow = slow.next;
+          fast = fast.next;
+        }
+        return slow; // This would be the place the cycle starts.
+      }
+    }
     return null;
   }
   @EpiTest(testDataFile = "is_list_cyclic.tsv")
