@@ -4,14 +4,59 @@ import epi.test_framework.GenericTest;
 import epi.test_framework.TestFailure;
 import epi.test_framework.TimedExecutor;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 public class DoListsOverlap {
-
+  // Brute force using hashMap
+  // T - O(n)
+  // S - O(n)
+//  public static ListNode<Integer> overlappingLists(ListNode<Integer> l0,
+//                                                   ListNode<Integer> l1) {
+//    Set<ListNode> listNodeMap = new HashSet<>();
+//    while(l0 != null) {
+//      listNodeMap.add(l0);
+//      l0 = l0.next;
+//    }
+//    while(l1 != null) {
+//      if(listNodeMap.contains(l1))
+//        return l1;
+//      l1 = l1.next;
+//    }
+//    return null;
+//  }
+  // Can we do something better?
+  // Lets find the length of each list keep going from longer until the lenghts become equal keep advancing to see if the node match if yes return or else null;
+  // T - O(n)
+  // S - O(1)
   public static ListNode<Integer> overlappingLists(ListNode<Integer> l0,
-                                                   ListNode<Integer> l1) {
-    // TODO - you fill in here.
-    return null;
+      ListNode<Integer> l1) {
+      int l0Length = length(l0), l1Length = length(l1);
+      if(l0Length > l1Length) {
+        l0 = advanceListByK(l0Length - l1Length, l0);
+      } else {
+        l1 = advanceListByK(l1Length - l0Length, l1);
+      }
+      while(l0 != null && l1 != null && l0 != l1) {
+        l0 = l0.next;
+        l1 = l1.next;
+      }
+      return l0;
+  }
+  private static ListNode<Integer> advanceListByK(int k, ListNode<Integer> node) {
+    while(k-- > 0) {
+      node = node.next;
+    }
+    return node;
+  }
+  private static int length(ListNode<Integer> node) {
+      int length = 0;
+      while(node != null) {
+        ++length;
+        node = node.next;
+      }
+      return length;
   }
   @EpiTest(testDataFile = "do_lists_overlap.tsv")
   public static void
