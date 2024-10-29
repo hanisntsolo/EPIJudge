@@ -6,8 +6,9 @@ public class DeleteNodeFromList {
 
   // Assumes nodeToDelete is not tail.
   public static void deletionFromList(ListNode<Integer> nodeToDelete) {
-    // TODO - you fill in here.
-    return;
+    // clever
+    nodeToDelete.data = nodeToDelete.next.data; // Assign the data and next link to descendants, and you are good to GTFO.
+    nodeToDelete.next = nodeToDelete.next.next;
   }
   @EpiTest(testDataFile = "delete_node_from_list.tsv")
   public static ListNode<Integer> deleteListWrapper(TimedExecutor executor,
