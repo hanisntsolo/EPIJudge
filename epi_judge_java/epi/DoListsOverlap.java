@@ -9,55 +9,34 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 public class DoListsOverlap {
-  // Brute force using hashMap
-  // T - O(n)
-  // S - O(n)
-//  public static ListNode<Integer> overlappingLists(ListNode<Integer> l0,
-//                                                   ListNode<Integer> l1) {
-//    Set<ListNode> listNodeMap = new HashSet<>();
-//    while(l0 != null) {
-//      listNodeMap.add(l0);
-//      l0 = l0.next;
-//    }
-//    while(l1 != null) {
-//      if(listNodeMap.contains(l1))
-//        return l1;
-//      l1 = l1.next;
-//    }
-//    return null;
-//  }
-  // Can we do something better?
-  // Lets find the length of each list keep going from longer until the lenghts become equal keep advancing to see if the node match if yes return or else null;
-  // T - O(n)
-  // S - O(1)
+  /*
+
+  l1 : [] -> []
+             |
+  l2 : [] -> [] -> [] -> []
+       |                 |
+       <------------------
+
+
+   */
   public static ListNode<Integer> overlappingLists(ListNode<Integer> l0,
       ListNode<Integer> l1) {
-      int l0Length = length(l0), l1Length = length(l1);
-      if(l0Length > l1Length) {
-        l0 = advanceListByK(l0Length - l1Length, l0);
-      } else {
-        l1 = advanceListByK(l1Length - l0Length, l1);
-      }
-      while(l0 != null && l1 != null && l0 != l1) {
-        l0 = l0.next;
-        l1 = l1.next;
-      }
-      return l0;
-  }
-  private static ListNode<Integer> advanceListByK(int k, ListNode<Integer> node) {
-    while(k-- > 0) {
-      node = node.next;
+    ListNode<Integer> root1 = IsListCyclic.hasCycle(l1);
+    ListNode<Integer> root0 = IsListCyclic.hasCycle(l0);
+    if(root0 == null && root1 == null) {
+      return DoTerminatedListsOverlap.overlappingNoCycleLists(l0, l1);
+    } else if(root0 == null && root1 != null ||
+              root0 != null && root1 == null) {
+      return null;
     }
-    return node;
+    // Else both list have cycles // Only this is the case where you have to be cautious.
+    ListNode<Integer> temp = root1;
+    do {
+      temp = temp.next;
+    } while(temp != root0 && temp != root1);
+    return temp == root0 ? root1 : null;
   }
-  private static int length(ListNode<Integer> node) {
-      int length = 0;
-      while(node != null) {
-        ++length;
-        node = node.next;
-      }
-      return length;
-  }
+
   @EpiTest(testDataFile = "do_lists_overlap.tsv")
   public static void
   overlappingListsWrapper(TimedExecutor executor, ListNode<Integer> l0,

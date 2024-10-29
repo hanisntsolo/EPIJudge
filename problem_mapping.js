@@ -764,7 +764,7 @@ problem_mapping = {
                 "total": 512
             },
             "Java: DeleteNodeFromList.java": {
-                "passed": 0,
+                "passed": 512,
                 "total": 512
             },
             "Python: delete_node_from_list.py": {
@@ -778,7 +778,7 @@ problem_mapping = {
                 "total": 306
             },
             "Java: DeleteKthLastFromList.java": {
-                "passed": 0,
+                "passed": 306,
                 "total": 306
             },
             "Python: delete_kth_last_from_list.py": {
@@ -792,7 +792,7 @@ problem_mapping = {
                 "total": 203
             },
             "Java: RemoveDuplicatesFromSortedList.java": {
-                "passed": 0,
+                "passed": 203,
                 "total": 203
             },
             "Python: remove_duplicates_from_sorted_list.py": {
@@ -806,7 +806,7 @@ problem_mapping = {
                 "total": 507
             },
             "Java: ListCyclicRightShift.java": {
-                "passed": 0,
+                "passed": 507,
                 "total": 507
             },
             "Python: list_cyclic_right_shift.py": {
@@ -820,7 +820,7 @@ problem_mapping = {
                 "total": 1015
             },
             "Java: EvenOddListMerge.java": {
-                "passed": 0,
+                "passed": 1015,
                 "total": 1015
             },
             "Python: even_odd_list_merge.py": {
@@ -834,7 +834,7 @@ problem_mapping = {
                 "total": 203
             },
             "Java: IsListPalindromic.java": {
-                "passed": 0,
+                "passed": 203,
                 "total": 203
             },
             "Python: is_list_palindromic.py": {
@@ -848,7 +848,7 @@ problem_mapping = {
                 "total": 208
             },
             "Java: PivotList.java": {
-                "passed": 0,
+                "passed": 208,
                 "total": 208
             },
             "Python: pivot_list.py": {
@@ -862,7 +862,7 @@ problem_mapping = {
                 "total": 2002
             },
             "Java: IntAsListAdd.java": {
-                "passed": 0,
+                "passed": 2002,
                 "total": 2002
             },
             "Python: int_as_list_add.py": {
