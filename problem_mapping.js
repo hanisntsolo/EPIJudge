@@ -948,7 +948,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Java: TreeLevelOrder.java": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Python: tree_level_order.py": {
@@ -962,7 +962,7 @@ problem_mapping = {
                 "total": 65
             },
             "Java: CircularQueue.java": {
-                "passed": 0,
+                "passed": 65,
                 "total": 65
             },
             "Python: circular_queue.py": {
@@ -976,7 +976,7 @@ problem_mapping = {
                 "total": 65
             },
             "Java: QueueFromStacks.java": {
-                "passed": 0,
+                "passed": 65,
                 "total": 65
             },
             "Python: queue_from_stacks.py": {
@@ -990,7 +990,7 @@ problem_mapping = {
                 "total": 201
             },
             "Java: QueueWithMax.java": {
-                "passed": 0,
+                "passed": 201,
                 "total": 201
             },
             "Python: queue_with_max.py": {
