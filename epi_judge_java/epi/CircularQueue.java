@@ -4,27 +4,45 @@ import epi.test_framework.EpiUserType;
 import epi.test_framework.GenericTest;
 import epi.test_framework.TestFailure;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 public class CircularQueue {
-
+  //TODO: Implement it again
   public static class Queue {
-    public Queue(int capacity) {}
+    private int head = 0;
+    private int tail = 0;
+    private int numQueueElements = 0;
+    private static final int SCALE_FACTOR = 2;
+    private Integer[] entries;
+    public Queue(int capacity) {
+      entries = new Integer[capacity];
+    }
     public void enqueue(Integer x) {
-      // TODO - you fill in here.
-      return;
+      if(numQueueElements == entries.length/*Need to resize*/) {
+        // Makes the queue elements appear consecutively
+        Collections.rotate(Arrays.asList(entries), -head);
+        // Reverse head and tail.
+        head = 0;
+        tail = numQueueElements;
+        entries = Arrays.copyOf(entries, numQueueElements * SCALE_FACTOR);
+      }
+      entries[tail] = x;
+      tail = (tail + 1) % entries.length; // shift the tail
+      ++numQueueElements;
     }
     public Integer dequeue() {
-      // TODO - you fill in here.
-      return 0;
+      --numQueueElements;;
+      Integer result = entries[head];
+      head = (head + 1) % entries.length;
+      return result;
     }
     public int size() {
-      // TODO - you fill in here.
-      return 0;
+      return numQueueElements;
     }
     @Override
     public String toString() {
-      // TODO - you fill in here.
-      return super.toString();
+      return "Queue{" + "head=" + head + ", tail=" + tail + ", numQueueElements=" + numQueueElements + '}';
     }
   }
   @EpiUserType(ctorParams = {String.class, int.class})
